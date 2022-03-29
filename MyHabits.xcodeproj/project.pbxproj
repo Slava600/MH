@@ -16,6 +16,7 @@
 		11E5997D27EDE7220091269C /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5997C27EDE7220091269C /* HabitsStore.swift */; };
 		11E5998327EE00780091269C /* HabitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998227EE00780091269C /* HabitsVC.swift */; };
 		11E5998527EE008C0091269C /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998427EE008C0091269C /* InfoVC.swift */; };
+		11E5998727EE2C780091269C /* HabitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998627EE2C780091269C /* HabitVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		11E5997C27EDE7220091269C /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		11E5998227EE00780091269C /* HabitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsVC.swift; sourceTree = "<group>"; };
 		11E5998427EE008C0091269C /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		11E5998627EE2C780091269C /* HabitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +64,14 @@
 		118D2CB127EC3D850096E1E2 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
-				118D2CB227EC3D850096E1E2 /* AppDelegate.swift */,
 				118D2CB427EC3D850096E1E2 /* SceneDelegate.swift */,
 				11E5998427EE008C0091269C /* InfoVC.swift */,
 				11E5998227EE00780091269C /* HabitsVC.swift */,
+				11E5998627EE2C780091269C /* HabitVC.swift */,
 				11E5997C27EDE7220091269C /* HabitsStore.swift */,
-				118D2CB627EC3D850096E1E2 /* ViewController.swift */,
 				118D2CBB27EC3D870096E1E2 /* Assets.xcassets */,
+				118D2CB227EC3D850096E1E2 /* AppDelegate.swift */,
+				118D2CB627EC3D850096E1E2 /* ViewController.swift */,
 				118D2CBD27EC3D870096E1E2 /* LaunchScreen.storyboard */,
 				118D2CC027EC3D870096E1E2 /* Info.plist */,
 				11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */,
@@ -149,6 +152,7 @@
 			files = (
 				11E5997D27EDE7220091269C /* HabitsStore.swift in Sources */,
 				11E5998327EE00780091269C /* HabitsVC.swift in Sources */,
+				11E5998727EE2C780091269C /* HabitVC.swift in Sources */,
 				118D2CB727EC3D850096E1E2 /* ViewController.swift in Sources */,
 				118D2CB327EC3D850096E1E2 /* AppDelegate.swift in Sources */,
 				11E5998527EE008C0091269C /* InfoVC.swift in Sources */,

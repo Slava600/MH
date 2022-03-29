@@ -28,19 +28,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         infoVC.view.backgroundColor = UIColor.white
         let infoNavVC = UINavigationController(rootViewController: infoVC)
         infoNavVC.tabBarItem = UITabBarItem(title: "Информация", image: UIImage(systemName: "info.circle"), selectedImage: UIImage(systemName: "info.circle"))
-        
-        
-        
+
         
         let tabBC = UITabBarController()
-        tabBC.tabBar.backgroundColor = UIColor(named: "LightGray")
-        tabBC.viewControllers = [habitsNavVC, infoNavVC]
+        tabBC.tabBar.backgroundColor = UIColor(named: "lightGray")
+        tabBC.viewControllers = [infoNavVC, habitsNavVC]
         
-        
-        
-        
-        
-        
+ 
         window.rootViewController = tabBC
         window.makeKeyAndVisible()
         

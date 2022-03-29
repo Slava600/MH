@@ -1,5 +1,5 @@
 //
-//  HabitsVC.swift
+//  HabitViewController.swift
 //  MyHabits
 //
 //  Created by Архипов Вячеслав on 25.03.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HabitsVC: UIViewController {
+class HabitVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
