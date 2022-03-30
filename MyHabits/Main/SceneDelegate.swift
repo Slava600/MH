@@ -32,10 +32,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBC = UITabBarController()
         tabBC.tabBar.backgroundColor = UIColor(named: "lightGray")
-        tabBC.viewControllers = [infoNavVC, habitsNavVC]
+        tabBC.viewControllers = [habitsNavVC, infoNavVC]
         
+        let habitVC = HabitVC()
+    
  
-        window.rootViewController = tabBC
+//        window.rootViewController = tabBC
+        window.rootViewController = habitVC
         window.makeKeyAndVisible()
         
         self.window = window
