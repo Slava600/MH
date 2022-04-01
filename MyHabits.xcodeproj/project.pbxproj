@@ -12,6 +12,9 @@
 		118D2CB727EC3D850096E1E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D2CB627EC3D850096E1E2 /* ViewController.swift */; };
 		118D2CBC27EC3D870096E1E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118D2CBB27EC3D870096E1E2 /* Assets.xcassets */; };
 		118D2CBF27EC3D870096E1E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118D2CBD27EC3D870096E1E2 /* LaunchScreen.storyboard */; };
+		11A17C1C27F748E200099E20 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C1B27F748E200099E20 /* ProgressCollectionViewCell.swift */; };
+		11A17C1E27F7494F00099E20 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */; };
+		11A17C2227F7499E00099E20 /* HabitCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */; };
 		11E5997B27ED2DC10091269C /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */; };
 		11E5997D27EDE7220091269C /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5997C27EDE7220091269C /* HabitsStore.swift */; };
 		11E5998327EE00780091269C /* HabitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998227EE00780091269C /* HabitsVC.swift */; };
@@ -33,6 +36,9 @@
 		118D2CBB27EC3D870096E1E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		118D2CBE27EC3D870096E1E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		118D2CC027EC3D870096E1E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A17C1B27F748E200099E20 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
+		11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewHeader.swift; sourceTree = "<group>"; };
 		11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		11E5997C27EDE7220091269C /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		11E5998227EE00780091269C /* HabitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsVC.swift; sourceTree = "<group>"; };
@@ -95,6 +101,9 @@
 			children = (
 				11E5998627EE2C780091269C /* HabitVC.swift */,
 				11E5998227EE00780091269C /* HabitsVC.swift */,
+				11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */,
+				11A17C1B27F748E200099E20 /* ProgressCollectionViewCell.swift */,
+				11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -199,12 +208,15 @@
 				11E5999027EF7EB40091269C /* InfoViewHeader.swift in Sources */,
 				11E5998327EE00780091269C /* HabitsVC.swift in Sources */,
 				11E5998E27EF73A50091269C /* Main.swift in Sources */,
+				11A17C2227F7499E00099E20 /* HabitCollectionViewHeader.swift in Sources */,
 				11E5999627EF87B10091269C /* InfoViewCell.swift in Sources */,
+				11A17C1C27F748E200099E20 /* ProgressCollectionViewCell.swift in Sources */,
 				11E5998727EE2C780091269C /* HabitVC.swift in Sources */,
 				118D2CB727EC3D850096E1E2 /* ViewController.swift in Sources */,
 				118D2CB327EC3D850096E1E2 /* AppDelegate.swift in Sources */,
 				11E5998527EE008C0091269C /* InfoVC.swift in Sources */,
 				118D2CB527EC3D850096E1E2 /* SceneDelegate.swift in Sources */,
+				11A17C1E27F7494F00099E20 /* HabitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

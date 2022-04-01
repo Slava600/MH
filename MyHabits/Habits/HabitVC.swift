@@ -9,24 +9,6 @@ import UIKit
 
 class HabitVC: UIViewController {
     
-    var habit:Habit?
-    var habitName = ""
-    var habitColor: UIColor = .systemBlue {
-        didSet {
-            habitNameText.textColor = habitColor
-            setTimeValue.textColor = habitColor
-            colorButton.backgroundColor = habitColor
-        }
-    }
-    
-    var habitTime = Date(){
-        didSet{
-            let dateformat = DateFormatter()
-            dateformat.dateFormat = "HH:mm a"
-            setTimeValue.text = dateformat.string(from: habitTime)
-        }
-    }
-    
     lazy var habitNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
@@ -50,6 +32,14 @@ class HabitVC: UIViewController {
         //        text.delegate = self
         return text
     }()
+    
+    var habitColor: UIColor = .systemBlue {
+        didSet {
+            habitNameText.textColor = habitColor
+            setTimeValue.textColor = habitColor
+            colorButton.backgroundColor = habitColor
+        }
+    }
     
     lazy var colorLabel: UILabel = {
         let label = UILabel()
@@ -110,6 +100,14 @@ class HabitVC: UIViewController {
         return label
     }()
     
+    var habitTime = Date(){
+        didSet{
+            let dateformat = DateFormatter()
+            dateformat.dateFormat = "HH:mm a"
+            setTimeValue.text = dateformat.string(from: habitTime)
+        }
+    }
+    
     lazy var timePicker: UIDatePicker = {
         let timePicker = UIDatePicker()
         timePicker.toAutoLayout()
@@ -146,7 +144,6 @@ class HabitVC: UIViewController {
         label.text = "Создать"
         label.textColor = .black
         label.textAlignment = .center
-        
         return label
     }()
     
@@ -161,10 +158,10 @@ class HabitVC: UIViewController {
     }()
     
     @objc func saveHabit(){
-        if let selfHabit = habit {
-            selfHabit.name = habitName
-            selfHabit.date = habitTime
-            selfHabit.color = habitColor
+        if let habitHasData = habit {
+            habitHasData.name = habitName
+            habitHasData.date = habitTime
+            habitHasData.color = habitColor
             HabitsStore.shared.save()
             //            HabitsVC.collectionView.reloadData()
         } else {
@@ -175,10 +172,15 @@ class HabitVC: UIViewController {
             if !store.habits.contains(newHabit){
                 store.habits.append(newHabit)
                 //                HabitsVC.collectionView.reloadData()
+            print (store.habits.count)
             }
         }
         dismiss(animated: true, completion: nil)
+        
     }
+    
+    var habit:Habit?
+    var habitName = "!!!!!"
     
     lazy var stackViewHeader: UIStackView = {
         let stack = UIStackView()
