@@ -8,20 +8,21 @@
 import UIKit
 
 class HabitCollectionViewHeader: UICollectionViewCell {
+    
     static let identifire = "HabitCollectionViewHeader"
     
     lazy var label: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
-        label.font = UIFont(name: "SF-Pro-Display-Bold", size: 34)
-        label.textColor = .black
         label.text = "Сегодня"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.textColor = .black
         return label
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .cyan
+        backgroundColor = .white
         addSubview(label)
         useConstraint()
     }

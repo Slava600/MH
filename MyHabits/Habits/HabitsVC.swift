@@ -7,9 +7,17 @@
 
 import UIKit
 
-class HabitsVC: UIViewController {
+class HabitsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    static let leyout: UICollectionViewFlowLayout = {
+    static let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: HabitsVC.layout)
+        collectionView.toAutoLayout()
+        collectionView.backgroundColor = UIColor(named: "lightGray")
+        return collectionView
+    }()
+    
+    
+    static let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 21
@@ -19,19 +27,20 @@ class HabitsVC: UIViewController {
         return layout
     }()
     
-    static let collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: HabitsVC.leyout)
-        collection.toAutoLayout()
-        collection.backgroundColor = UIColor(named: "purple")
-        return collectionView
-    }()
-
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.addSubviews(HabitsVC.collectionView)
+        
+        HabitsVC.collectionView.register(ProgressCollectionViewCell.self, forCellWithReuseIdentifier: ProgressCollectionViewCell.identifire)
+        HabitsVC.collectionView.register(HabitCollectionViewCell.self, forCellWithReuseIdentifier: HabitCollectionViewCell.identifire)
+        HabitsVC.collectionView.register(HabitCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HabitCollectionViewHeader.identifire)
+        
+        HabitsVC.collectionView.dataSource = self
+        HabitsVC.collectionView.delegate = self
+        
+        useConstraint()
+        
         let barButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "plus",
                            withConfiguration: UIImage.SymbolConfiguration(pointSize:17))?
@@ -40,18 +49,11 @@ class HabitsVC: UIViewController {
             target: self,
             action: #selector(addHabit))
         navigationItem.rightBarButtonItem = barButtonItem
-        
-        HabitsVC.collectionView.dataSource = self
-        HabitsVC.collectionView.delegate = self
-
-        view.addSubviews(HabitsVC.collectionView)
-
-        HabitsVC.collectionView.register(HabitCollectionViewHeader.self, forCellWithReuseIdentifier: HabitCollectionViewHeader.identifire)
-        HabitsVC.collectionView.register(ProgressCollectionViewCell.self, forCellWithReuseIdentifier: ProgressCollectionViewCell.identifire)
-        HabitsVC.collectionView.register(HabitCollectionViewCell.self, forCellWithReuseIdentifier: HabitCollectionViewCell.identifire)
-        
-        useConstraint()
-
+    }
+    
+    @objc func addHabit() {
+        let habitViewController = HabitVC()
+        navigationController?.present(habitViewController, animated: true, completion: nil)
     }
     
     func useConstraint(){
@@ -63,11 +65,33 @@ class HabitsVC: UIViewController {
         ])
     }
     
-    
-    
-    @objc func addHabit() {
-        let habitViewController = HabitVC()
-        navigationController?.present(habitViewController, animated: true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        HabitsStore.shared.habits.count + 1
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HabitCollectionViewHeader.identifire, for: indexPath) as? HabitCollectionViewHeader else {
+            return UICollectionReusableView ()}
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.item == 0 {
+            return CGSize(width: collectionView.frame.width - 32, height: 60)
+        } else {
+            return CGSize(width: collectionView.frame.width - 32, height: 130)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionViewCell.identifire, for: indexPath) as? ProgressCollectionViewCell else {
+                return UICollectionViewCell()}
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitCollectionViewCell.identifire , for: indexPath) as? HabitCollectionViewCell else {
+                return UICollectionViewCell()}
+            return cell
+        }
+    }
 }

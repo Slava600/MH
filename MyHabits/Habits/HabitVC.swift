@@ -163,7 +163,7 @@ class HabitVC: UIViewController {
             habitHasData.date = habitTime
             habitHasData.color = habitColor
             HabitsStore.shared.save()
-            //            HabitsVC.collectionView.reloadData()
+            HabitsVC.collectionView.reloadData()
         } else {
             let newHabit = Habit(name: habitName,
                                  date: habitTime,
@@ -171,8 +171,9 @@ class HabitVC: UIViewController {
             let store = HabitsStore.shared
             if !store.habits.contains(newHabit){
                 store.habits.append(newHabit)
-                //                HabitsVC.collectionView.reloadData()
-            print (store.habits.count)
+                HabitsVC.collectionView.reloadData()
+                print (store.habits.count)
+                //               store.habits.removeAll()
             }
         }
         dismiss(animated: true, completion: nil)
