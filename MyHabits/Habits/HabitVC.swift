@@ -173,7 +173,8 @@ class HabitVC: UIViewController {
                 store.habits.append(newHabit)
                 HabitsVC.collectionView.reloadData()
                 print (store.habits.count)
-                //               store.habits.removeAll()
+                
+//  store.habits.removeAll()
             }
         }
         dismiss(animated: true, completion: nil)

@@ -14,7 +14,7 @@ class InfoViewCell: UITableViewCell {
     lazy var label: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
-        label.font = UIFont(name: "SF-Pro-Text-Regular", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .left
         label.textAlignment = .natural
