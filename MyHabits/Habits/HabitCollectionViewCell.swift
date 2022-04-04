@@ -40,7 +40,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         let checkButton = UIButton()
         checkButton.toAutoLayout()
         checkButton.layer.cornerRadius = 19
-        checkButton.setTitleColor(.red, for: .normal)
+        checkButton.setTitleColor(.white, for: .normal)
         checkButton.addTarget(self, action: #selector(tapToChecker), for: .touchUpInside)
         return checkButton
     }()
@@ -90,10 +90,10 @@ class HabitCollectionViewCell: UICollectionViewCell {
     
     func useConstraint(){
         NSLayoutConstraint.activate([
-        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 21),
+         nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 21),
          nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
          
-         dataText.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+         dataText.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
          dataText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
          
          checker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),

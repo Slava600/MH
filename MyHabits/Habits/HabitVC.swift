@@ -29,7 +29,7 @@ class HabitVC: UIViewController {
         //        text.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         //        text.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
         //        text.autocapitalizationType = .none
-        //        text.delegate = self
+                text.delegate = self
         return text
     }()
     
@@ -182,7 +182,7 @@ class HabitVC: UIViewController {
     }
     
     var habit:Habit?
-    var habitName = "!!!!!"
+    var habitName = ""
     
     lazy var stackViewHeader: UIStackView = {
         let stack = UIStackView()
