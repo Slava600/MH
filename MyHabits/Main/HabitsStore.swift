@@ -90,7 +90,7 @@ extension Habit: Equatable {
 public final class HabitsStore {
     
     /// Синглтон для изменения состояния привычек из разных модулей.
-    public static let shared: HabitsStore = .init()
+    public static let shared: HabitsStore = .init()               // .......................?
     
     /// Список привычек, добавленных пользователем. Добавленные привычки сохраняются в UserDefaults и доступны после перезагрузки приложения.
     public var habits: [Habit] = [] {
@@ -104,7 +104,7 @@ public final class HabitsStore {
         guard let startDate = userDefaults.object(forKey: "start_date") as? Date else {
             return []
         }
-        return Date.dates(from: startDate, to: .init())
+        return Date.dates(from: startDate, to: .init())                 // .......................?
     }
     
     /// Возвращает значение от 0 до 1.
@@ -149,7 +149,7 @@ public final class HabitsStore {
     /// Добавляет текущую дату в trackDates для переданной привычки.
     /// - Parameter habit: Привычка, в которую добавится новая дата.
     public func track(_ habit: Habit) {
-        habit.trackDates.append(.init())
+        habit.trackDates.append(.init())                // .......................?
         save()
     }
     
@@ -169,7 +169,7 @@ public final class HabitsStore {
     /// - Returns: Возвращает true, если привычка была затрекана в переданную дату.
     public func habit(_ habit: Habit, isTrackedIn date: Date) -> Bool {
         habit.trackDates.contains { trackDate in
-            calendar.isDate(date, equalTo: trackDate, toGranularity: .day)
+            calendar.isDate(date, equalTo: trackDate, toGranularity: .day) // .......................?
         }
     }
     

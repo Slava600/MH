@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         habitsVC.view.backgroundColor = UIColor.white
         let habitsNavVC = UINavigationController(rootViewController: habitsVC)
         habitsNavVC.tabBarItem = UITabBarItem(title: "Привычки", image: UIImage(named: "tabIconHabits"), selectedImage: UIImage(named: "tabIconHabits"))
-        habitsNavVC.navigationBar.barTintColor = UIColor.brown
+        habitsNavVC.navigationBar.barTintColor = UIColor.white
 
        
         let infoVC = InfoVC()

@@ -9,6 +9,9 @@ import UIKit
 
 class HabitVC: UIViewController {
     
+    var habit:Habit?
+    var habitName = "..."
+    
     lazy var habitNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
@@ -26,12 +29,18 @@ class HabitVC: UIViewController {
         text.placeholder = "Бегать по утрам, спать 8 часов и т.п."
         text.textColor = habitColor
         text.returnKeyType = .done
-        //        text.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        //        text.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
-        //        text.autocapitalizationType = .none
+        text.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        text.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
+        text.autocapitalizationType = .sentences
                 text.delegate = self
         return text
     }()
+    
+    @objc func nameTextChanged (){
+        if let text = habitNameText.text {
+            habitName = text
+        }
+    }
     
     var habitColor: UIColor = .systemBlue {
         didSet {
@@ -174,15 +183,13 @@ class HabitVC: UIViewController {
                 HabitsVC.collectionView.reloadData()
                 print (store.habits.count)
                 
+
 //  store.habits.removeAll()
             }
         }
         dismiss(animated: true, completion: nil)
         
     }
-    
-    var habit:Habit?
-    var habitName = ""
     
     lazy var stackViewHeader: UIStackView = {
         let stack = UIStackView()

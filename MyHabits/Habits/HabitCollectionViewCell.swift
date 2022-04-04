@@ -44,8 +44,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         checkButton.addTarget(self, action: #selector(tapToChecker), for: .touchUpInside)
         return checkButton
     }()
-    
-    var habit: Habit?
+
     
     @objc func tapToChecker() {
         if let trackHabit = habit {
@@ -65,12 +64,15 @@ class HabitCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var habit: Habit?
+    
     func setup(habit: Habit) {
         self.habit = habit
         nameLabel.text = habit.name
         nameLabel.textColor = habit.color
         dataText.text = habit.dateString
         counterText.text = "Счётчик: " + String(habit.trackDates.count)
+        
         if habit.isAlreadyTakenToday {
             checker.backgroundColor = habit.color
             checker.layer.borderWidth = 1
@@ -93,7 +95,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
          nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 21),
          nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
          
-         dataText.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+         dataText.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
          dataText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
          
          checker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
