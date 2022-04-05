@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11683D4527FC569000FFFBCE /* HabitDetailsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11683D4427FC569000FFFBCE /* HabitDetailsTableHeader.swift */; };
+		11683D4727FC590200FFFBCE /* HabitDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11683D4627FC590200FFFBCE /* HabitDetailTableViewCell.swift */; };
 		118D2CB327EC3D850096E1E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D2CB227EC3D850096E1E2 /* AppDelegate.swift */; };
 		118D2CB527EC3D850096E1E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D2CB427EC3D850096E1E2 /* SceneDelegate.swift */; };
 		118D2CB727EC3D850096E1E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D2CB627EC3D850096E1E2 /* ViewController.swift */; };
@@ -15,12 +17,12 @@
 		11A17C1C27F748E200099E20 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C1B27F748E200099E20 /* ProgressCollectionViewCell.swift */; };
 		11A17C1E27F7494F00099E20 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */; };
 		11A17C2227F7499E00099E20 /* HabitCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */; };
+		11AE6A8927FB7A5500F328C7 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE6A8827FB7A5500F328C7 /* HabitDetailsViewController.swift */; };
 		11E5997B27ED2DC10091269C /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */; };
 		11E5997D27EDE7220091269C /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5997C27EDE7220091269C /* HabitsStore.swift */; };
 		11E5998327EE00780091269C /* HabitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998227EE00780091269C /* HabitsVC.swift */; };
 		11E5998527EE008C0091269C /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998427EE008C0091269C /* InfoVC.swift */; };
 		11E5998727EE2C780091269C /* HabitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998627EE2C780091269C /* HabitVC.swift */; };
-		11E5998E27EF73A50091269C /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998D27EF73A50091269C /* Main.swift */; };
 		11E5999027EF7EB40091269C /* InfoViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998F27EF7EB40091269C /* InfoViewHeader.swift */; };
 		11E5999627EF87B10091269C /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5999527EF87B10091269C /* InfoViewCell.swift */; };
 		11E5999827EF89090091269C /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11E5999727EF89090091269C /* SF-Pro-Text-Regular.otf */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11683D4427FC569000FFFBCE /* HabitDetailsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsTableHeader.swift; sourceTree = "<group>"; };
+		11683D4627FC590200FFFBCE /* HabitDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailTableViewCell.swift; sourceTree = "<group>"; };
 		118D2CAF27EC3D850096E1E2 /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118D2CB227EC3D850096E1E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118D2CB427EC3D850096E1E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,12 +43,12 @@
 		11A17C1B27F748E200099E20 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
 		11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewHeader.swift; sourceTree = "<group>"; };
+		11AE6A8827FB7A5500F328C7 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 		11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		11E5997C27EDE7220091269C /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		11E5998227EE00780091269C /* HabitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsVC.swift; sourceTree = "<group>"; };
 		11E5998427EE008C0091269C /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		11E5998627EE2C780091269C /* HabitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitVC.swift; sourceTree = "<group>"; };
-		11E5998D27EF73A50091269C /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		11E5998F27EF7EB40091269C /* InfoViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewHeader.swift; sourceTree = "<group>"; };
 		11E5999527EF87B10091269C /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
 		11E5999727EF89090091269C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -92,8 +96,20 @@
 				11E5999727EF89090091269C /* SF-Pro-Text-Regular.otf */,
 				11E5999927EF89210091269C /* SF-Pro-Text-Semibold.otf */,
 				11E5999B27EF898F0091269C /* SF-Pro-Display-Bold.otf */,
+				118D2CB227EC3D850096E1E2 /* AppDelegate.swift */,
+				118D2CB627EC3D850096E1E2 /* ViewController.swift */,
 			);
 			path = MyHabits;
+			sourceTree = "<group>";
+		};
+		11AE6A8A27FB7A8B00F328C7 /* HabitDetails */ = {
+			isa = PBXGroup;
+			children = (
+				11AE6A8827FB7A5500F328C7 /* HabitDetailsViewController.swift */,
+				11683D4627FC590200FFFBCE /* HabitDetailTableViewCell.swift */,
+				11683D4427FC569000FFFBCE /* HabitDetailsTableHeader.swift */,
+			);
+			path = HabitDetails;
 			sourceTree = "<group>";
 		};
 		11E5998827EF6FA90091269C /* Habits */ = {
@@ -104,6 +120,7 @@
 				11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */,
 				11A17C1B27F748E200099E20 /* ProgressCollectionViewCell.swift */,
 				11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */,
+				11AE6A8A27FB7A8B00F328C7 /* HabitDetails */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -121,10 +138,7 @@
 		11E5998A27EF70060091269C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				11E5998D27EF73A50091269C /* Main.swift */,
 				118D2CB427EC3D850096E1E2 /* SceneDelegate.swift */,
-				118D2CB227EC3D850096E1E2 /* AppDelegate.swift */,
-				118D2CB627EC3D850096E1E2 /* ViewController.swift */,
 				11E5997C27EDE7220091269C /* HabitsStore.swift */,
 			);
 			path = Main;
@@ -205,16 +219,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				11E5997D27EDE7220091269C /* HabitsStore.swift in Sources */,
+				11683D4727FC590200FFFBCE /* HabitDetailTableViewCell.swift in Sources */,
 				11E5999027EF7EB40091269C /* InfoViewHeader.swift in Sources */,
 				11E5998327EE00780091269C /* HabitsVC.swift in Sources */,
-				11E5998E27EF73A50091269C /* Main.swift in Sources */,
 				11A17C2227F7499E00099E20 /* HabitCollectionViewHeader.swift in Sources */,
 				11E5999627EF87B10091269C /* InfoViewCell.swift in Sources */,
 				11A17C1C27F748E200099E20 /* ProgressCollectionViewCell.swift in Sources */,
 				11E5998727EE2C780091269C /* HabitVC.swift in Sources */,
 				118D2CB727EC3D850096E1E2 /* ViewController.swift in Sources */,
 				118D2CB327EC3D850096E1E2 /* AppDelegate.swift in Sources */,
+				11AE6A8927FB7A5500F328C7 /* HabitDetailsViewController.swift in Sources */,
 				11E5998527EE008C0091269C /* InfoVC.swift in Sources */,
+				11683D4527FC569000FFFBCE /* HabitDetailsTableHeader.swift in Sources */,
 				118D2CB527EC3D850096E1E2 /* SceneDelegate.swift in Sources */,
 				11A17C1E27F7494F00099E20 /* HabitCollectionViewCell.swift in Sources */,
 			);

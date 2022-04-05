@@ -26,8 +26,6 @@ class HabitsVC: UIViewController {
         return collectionView
     }()
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,14 +99,15 @@ extension HabitsVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if !(indexPath.item == 0) {
-//            guard let item = collectionView.cellForItem(at: indexPath) as? HabitCollectionViewCell else { return }
-//
-//            if let habit = item.habit {
-//                print ("!!!")
-//            }
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !(indexPath.item == 0) {
+            guard let item = collectionView.cellForItem(at: indexPath) as? HabitCollectionViewCell else { return }
+
+            if let habit = item.habit {
+                navigationController?.pushViewController(HabitDetailsVC(habit), animated: true)
+            }
+        }
+    }
+    
    
 }
