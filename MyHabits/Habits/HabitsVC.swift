@@ -51,8 +51,7 @@ class HabitsVC: UIViewController {
     }
     
     @objc func addHabit() {
-        let habitViewController = HabitVC()
-        navigationController?.present(habitViewController, animated: true, completion: nil)
+        navigationController?.present(HabitVC(nil), animated: true, completion: nil)
     }
     
     func useConstraint(){

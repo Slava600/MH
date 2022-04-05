@@ -20,17 +20,12 @@ class HabitDetailsVC: UIViewController {
         return table
     }()
 
-    @objc func updateTable(){
-        HabitDetailsVC.tableView.reloadData()
-        HabitDetailsVC.tableView.refreshControl?.endRefreshing()
-    }
-    
-//    static var isDeleted = false
-    
     let habit: Habit
     
+    static var isDeleted = false
+    
     init (_ habit: Habit) {
-//        HabitDetailsViewController.isDeleted = false
+        HabitDetailsVC.isDeleted = false
         self.habit = habit
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,10 +34,22 @@ class HabitDetailsVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func updateTable(){
+        HabitDetailsVC.tableView.reloadData()
+        HabitDetailsVC.tableView.refreshControl?.endRefreshing()
+    }
+    
+    @objc func tapToCancel() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    @objc func editHabit(){
+        navigationController?.present(HabitVC(habit), animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         let leftBarButtonItem = UIBarButtonItem(title: "❮  Назад", style: .plain, target: self, action: #selector(tapToCancel))
         leftBarButtonItem.tintColor = СonstantValues.purpurColor
         navigationItem.leftBarButtonItem = leftBarButtonItem
@@ -67,14 +74,6 @@ class HabitDetailsVC: UIViewController {
             HabitDetailsVC.tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             HabitDetailsVC.tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
-    }
-
-    @objc func tapToCancel() {
-        navigationController?.popViewController(animated: true)
-    }
-
-    @objc func editHabit(){
-//        navigationController?.present(HabitVC(habit), animated: true, completion: nil)
     }
 }
 
@@ -104,8 +103,6 @@ extension HabitDetailsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
-        
     }
-
 }
     

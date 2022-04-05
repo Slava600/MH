@@ -45,7 +45,6 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return checkButton
     }()
 
-    
     @objc func tapToChecker() {
         if let trackHabit = habit {
             HabitsStore.shared.track(trackHabit)
@@ -93,10 +92,10 @@ class HabitCollectionViewCell: UICollectionViewCell {
     func useConstraint(){
         NSLayoutConstraint.activate([
          nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 21),
-         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
          
          dataText.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-         dataText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+         dataText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
          
          checker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
          checker.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 40),
@@ -104,8 +103,8 @@ class HabitCollectionViewCell: UICollectionViewCell {
          checker.widthAnchor.constraint(equalToConstant: 38),
          checker.heightAnchor.constraint(equalToConstant: 38),
          
-         counterText.topAnchor.constraint(equalTo: checker.bottomAnchor, constant: 16),
-         counterText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+         counterText.topAnchor.constraint(equalTo: checker.bottomAnchor, constant: 15),
+         counterText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
          counterText.trailingAnchor.constraint(equalTo: checker.leadingAnchor, constant: -40)
         ])
     }

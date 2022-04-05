@@ -9,7 +9,7 @@ import UIKit
 
 class HabitVC: UIViewController {
     
-    var habit:Habit?
+    var habit: Habit?
     var habitName = "..."
     
     lazy var habitNameLabel: UILabel = {
@@ -32,7 +32,7 @@ class HabitVC: UIViewController {
         text.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         text.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
         text.autocapitalizationType = .sentences
-                text.delegate = self
+        text.delegate = self
         return text
     }()
     
@@ -166,11 +166,37 @@ class HabitVC: UIViewController {
         return button
     }()
     
+    lazy var deleteButton: UIButton = {
+        let button = UIButton()
+        button.toAutoLayout()
+        button.backgroundColor = .white
+        button.setTitle("Удалить привычку", for: .normal)
+        button.setTitleColor(.systemRed, for: .normal)
+        button.addTarget(self, action: #selector(deleteHabit), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func deleteHabit() {
+        let alertController = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \"\(habitName)\"?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { (action) -> Void in
+            if let selfHabit = self.habit {
+                HabitsStore.shared.habits.removeAll(where: {$0 == selfHabit})
+                HabitsVC.collectionView.reloadData()
+            }
+            HabitDetailsVC.isDeleted = true
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(deleteAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @objc func saveHabit(){
-        if let habitHasData = habit {
-            habitHasData.name = habitName
-            habitHasData.date = habitTime
-            habitHasData.color = habitColor
+        if let selfHabit = habit {
+            selfHabit.name = habitName
+            selfHabit.date = habitTime
+            selfHabit.color = habitColor
             HabitsStore.shared.save()
             HabitsVC.collectionView.reloadData()
         } else {
@@ -181,14 +207,11 @@ class HabitVC: UIViewController {
             if !store.habits.contains(newHabit){
                 store.habits.append(newHabit)
                 HabitsVC.collectionView.reloadData()
-                print (store.habits.count)
-                
-
+//  print (store.habits.count)
 //  store.habits.removeAll()
             }
         }
         dismiss(animated: true, completion: nil)
-        
     }
     
     lazy var stackViewHeader: UIStackView = {
@@ -204,11 +227,32 @@ class HabitVC: UIViewController {
         stackViewHeader.addArrangedSubview(cancelButton)
         stackViewHeader.addArrangedSubview(viewTitle)
         stackViewHeader.addArrangedSubview(saveButton)
-        view.addSubviews(stackViewHeader, habitNameLabel, habitNameText, colorLabel, colorButton, timeLabel, everyDayInLabel, setTimeValue, timePicker)
+        view.addSubviews(stackViewHeader, habitNameLabel, habitNameText, colorLabel, colorButton, timeLabel, everyDayInLabel, setTimeValue, timePicker, deleteButton)
         view.backgroundColor = .white
         useConstraint()
     }
     
+    init(_ editHabit: Habit?) {
+        super.init(nibName: nil, bundle: nil)
+        modalPresentationStyle = .fullScreen
+        habit = editHabit
+        if let habitSource = habit {
+            habitTime = habitSource.date
+            habitColor = habitSource.color
+            habitName = habitSource.name
+            habitNameText.text = habitName
+            deleteButton.isHidden = false
+            viewTitle.text = "Править"
+        } else {
+            deleteButton.isHidden = true
+            viewTitle.text = "Создать"
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func useConstraint() {
         NSLayoutConstraint.activate([
             
@@ -242,7 +286,10 @@ class HabitVC: UIViewController {
             
             timePicker.topAnchor.constraint(equalTo: everyDayInLabel.bottomAnchor, constant: 10),
             timePicker.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            timePicker.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15)
+            timePicker.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            
+            deleteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+            deleteButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
     }
 }
@@ -252,6 +299,16 @@ extension HabitVC: UIColorPickerViewControllerDelegate, UITextFieldDelegate {
         habitColor = viewController.selectedColor
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

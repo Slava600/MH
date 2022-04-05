@@ -39,13 +39,13 @@ class HabitDetailTableViewCell: UITableViewCell {
     }
     
     func useConstraint() {
-        NSLayoutConstraint.activate([dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-                                     dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-                                     dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+        NSLayoutConstraint.activate([dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+                                     dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+                                     dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
                                      
-                                     checker.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-                                     checker.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor, constant: 16),
-                                     checker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+                                     checker.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+                                     checker.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor, constant: 15),
+                                     checker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
                                     ])
     }
     
@@ -54,11 +54,7 @@ class HabitDetailTableViewCell: UITableViewCell {
         let today = Calendar.current.dateComponents([.day], from: Date())
         let activDay = Calendar.current.dateComponents([.day], from: date)
         
-        
         if let day = today.day {
-            
-            
-            
             if day == activDay.day {
                 dateLabel.text = "Сегодня"
             } else if day - 1 == activDay.day {
@@ -78,5 +74,4 @@ class HabitDetailTableViewCell: UITableViewCell {
         }
         checker.isHidden = !check
     }
-    
 }

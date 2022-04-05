@@ -33,7 +33,7 @@ class HabitDetailsTableHeader: UITableViewHeaderFooterView {
     func useConstraint(){
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15)
         ])
     }
 }

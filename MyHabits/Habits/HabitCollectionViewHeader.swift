@@ -28,9 +28,9 @@ class HabitCollectionViewHeader: UICollectionViewCell {
     }
     
     func useConstraint(){
-        NSLayoutConstraint.activate([label.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-                                     label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-                                     label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
+        NSLayoutConstraint.activate([label.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+                                     label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+                                     label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
         ])
     }
     

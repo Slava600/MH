@@ -115,7 +115,6 @@
 		11E5998827EF6FA90091269C /* Habits */ = {
 			isa = PBXGroup;
 			children = (
-				11E5998627EE2C780091269C /* HabitVC.swift */,
 				11E5998227EE00780091269C /* HabitsVC.swift */,
 				11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */,
 				11A17C1B27F748E200099E20 /* ProgressCollectionViewCell.swift */,
@@ -140,6 +139,7 @@
 			children = (
 				118D2CB427EC3D850096E1E2 /* SceneDelegate.swift */,
 				11E5997C27EDE7220091269C /* HabitsStore.swift */,
+				11E5998627EE2C780091269C /* HabitVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

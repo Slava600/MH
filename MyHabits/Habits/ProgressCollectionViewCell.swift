@@ -61,18 +61,18 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     func useConstraint() {
         NSLayoutConstraint.activate([
-            motivationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            motivationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            motivationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            motivationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             
-            procentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            procentLabel.leadingAnchor.constraint(equalTo: motivationLabel.trailingAnchor, constant: 16),
-            procentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            procentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            procentLabel.leadingAnchor.constraint(equalTo: motivationLabel.trailingAnchor, constant: 15),
+            procentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             
             progressBar.topAnchor.constraint(equalTo: motivationLabel.bottomAnchor, constant: 8),
-            progressBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            progressBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            progressBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
-            progressBar.heightAnchor.constraint(equalToConstant: 8 * 0.5)
+            progressBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            progressBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            progressBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            progressBar.heightAnchor.constraint(equalToConstant: 4)
         ])
     }
 }

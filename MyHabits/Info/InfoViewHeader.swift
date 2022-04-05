@@ -31,13 +31,11 @@ class InfoViewHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func useConstraint(){
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
         ])
     }
-    
 }

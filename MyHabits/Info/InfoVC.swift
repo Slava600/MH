@@ -12,7 +12,6 @@ class InfoVC: UIViewController {
     lazy var infoTabelView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.toAutoLayout()
-        
         table.backgroundColor = .white
         table.isScrollEnabled = true
         table.separatorInset = .zero
@@ -21,19 +20,17 @@ class InfoVC: UIViewController {
         return table
     }()
 
-    
     @objc func updateInfo() {
         infoTabelView.reloadData()
         infoTabelView.refreshControl?.endRefreshing()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Информация"
         view.addSubview(infoTabelView)
-        
+
         infoTabelView.dataSource = self
         infoTabelView.delegate = self
         
@@ -51,17 +48,14 @@ class InfoVC: UIViewController {
             infoTabelView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
-    
 }
 
 extension InfoVC:UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoViewCell.identifire, for: indexPath) as? InfoViewCell else { return UITableViewCell() }
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
@@ -71,8 +65,6 @@ extension InfoVC:UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     
-
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: InfoViewHeader.identifire) as? InfoViewHeader else { return nil }
         return headerView
@@ -80,8 +72,5 @@ extension InfoVC:UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
-
     }
-    
-
 }
