@@ -22,7 +22,7 @@ class HabitsVC: UIViewController {
     static let collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: HabitsVC.layout)
         collectionView.toAutoLayout()
-        collectionView.backgroundColor = UIColor(named: "lightGray")
+        collectionView.backgroundColor = СonstantValues.foneColor
         return collectionView
     }()
     
@@ -32,7 +32,7 @@ class HabitsVC: UIViewController {
         let barButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "plus",
                            withConfiguration: UIImage.SymbolConfiguration(pointSize:17))?
-                .withTintColor(UIColor(named: "purple")!,renderingMode: .alwaysOriginal),
+                .withTintColor(СonstantValues.purpurColor,renderingMode: .alwaysOriginal),
             style: .plain,
             target: self,
             action: #selector(addHabit))

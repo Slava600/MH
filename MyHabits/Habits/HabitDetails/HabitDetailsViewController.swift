@@ -10,7 +10,7 @@ import UIKit
 class HabitDetailsVC: UIViewController {
     
     static let tableView: UITableView = {
-        let table = UITableView()
+        let table = UITableView(frame: .zero, style: .grouped)
         table.toAutoLayout()
         table.isScrollEnabled = true
         table.separatorInset = .zero
@@ -41,15 +41,17 @@ class HabitDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "lightGray")
+
         
         let leftBarButtonItem = UIBarButtonItem(title: "❮  Назад", style: .plain, target: self, action: #selector(tapToCancel))
-        leftBarButtonItem.tintColor = UIColor(named: "purple")
+        leftBarButtonItem.tintColor = СonstantValues.purpurColor
         navigationItem.leftBarButtonItem = leftBarButtonItem
 
         let rightBarButtonItem = UIBarButtonItem (title: "Править", style: .plain, target: self, action: #selector (editHabit))
-        rightBarButtonItem.tintColor = UIColor(named: "purple")
+        rightBarButtonItem.tintColor = СonstantValues.purpurColor
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        view.backgroundColor = .white
         
         HabitDetailsVC.tableView.dataSource = self
         HabitDetailsVC.tableView.delegate = self
@@ -101,7 +103,7 @@ extension HabitDetailsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 45
         
     }
 

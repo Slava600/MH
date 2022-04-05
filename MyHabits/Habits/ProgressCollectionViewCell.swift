@@ -35,7 +35,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         let bar = UIProgressView(progressViewStyle: .bar)
         bar.toAutoLayout()
         bar.trackTintColor = .systemGray2
-        bar.progressTintColor = UIColor(named: "purple")
+        bar.progressTintColor = СonstantValues.purpurColor
         bar.backgroundColor = .white
         bar.layer.cornerRadius = 8
         bar.clipsToBounds = true

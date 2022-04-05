@@ -31,14 +31,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         
         let tabBC = UITabBarController()
-        tabBC.tabBar.backgroundColor = UIColor(named: "lightGray")
+        tabBC.tabBar.backgroundColor = .white
         tabBC.viewControllers = [habitsNavVC, infoNavVC]
         
-//        let habitVC = HabitVC()
-    
- 
+        
+        let appearanceTabBar = tabBC.tabBar.standardAppearance
+        appearanceTabBar.stackedLayoutAppearance.selected.titleTextAttributes = [ .foregroundColor: СonstantValues.purpurColor]
+        appearanceTabBar.stackedLayoutAppearance.selected.iconColor = СonstantValues.purpurColor
+        tabBC.tabBar.standardAppearance = appearanceTabBar
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white
+        
+
+//      let habitVC = HabitVC()
+//      window.rootViewController = habitVC
+        
         window.rootViewController = tabBC
-//        window.rootViewController = habitVC
         window.makeKeyAndVisible()
         
         self.window = window

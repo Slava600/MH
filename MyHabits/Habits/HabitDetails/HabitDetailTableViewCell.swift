@@ -22,7 +22,7 @@ class HabitDetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.toAutoLayout()
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = UIColor(named: "purple")
+        label.textColor = СonstantValues.purpurColor
         label.text = "✔︎"
         return label
     }()

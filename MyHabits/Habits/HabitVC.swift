@@ -137,7 +137,7 @@ class HabitVC: UIViewController {
         button.toAutoLayout()
         button.setTitle("Отменить", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        button.setTitleColor(UIColor(named: "purple"), for: .normal)
+        button.setTitleColor(СonstantValues.purpurColor, for: .normal)
         button.addTarget(self, action: #selector(cancelHabit), for: .touchUpInside)
         return button
     }()
@@ -161,7 +161,7 @@ class HabitVC: UIViewController {
         button.toAutoLayout()
         button.setTitle("Сохранить", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        button.setTitleColor(UIColor(named: "purple"), for: .normal)
+        button.setTitleColor(СonstantValues.purpurColor, for: .normal)
         button.addTarget(self, action: #selector(saveHabit), for: .touchUpInside)
         return button
     }()

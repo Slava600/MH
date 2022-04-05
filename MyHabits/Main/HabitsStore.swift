@@ -236,3 +236,7 @@ let textInfo = """
 5. Держать планку 40 дней. Практикующий методику уже чувствует себя освободившимся от прошлого негатива и двигается в нужном направлении с хорошей динамикой.
 
 """
+struct СonstantValues {
+static var purpurColor = UIColor(red: 161/255, green: 22/255, blue: 204/255, alpha: 1)
+static var foneColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+}
