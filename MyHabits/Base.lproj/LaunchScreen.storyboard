@@ -32,7 +32,7 @@
                                 <rect key="frame" x="163" y="778" width="88" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="FxU-Ob-WGo"/>
-                                    <constraint firstAttribute="width" constant="88" id="pdd-4q-bOc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="pdd-4q-bOc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="20"/>
                                 <color key="textColor" red="0.63110864160000002" green="0.082377605140000004" blue="0.79993563889999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
