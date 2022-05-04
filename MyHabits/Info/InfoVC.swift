@@ -8,7 +8,7 @@
 import UIKit
 
 class InfoVC: UIViewController {
-    
+    // MARK: - Свойства
     lazy var infoTabelView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.toAutoLayout()
@@ -20,26 +20,23 @@ class InfoVC: UIViewController {
         return table
     }()
 
+    // MARK: - Методы жизненного цикла
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Информация"
+        view.addSubview(infoTabelView)
+        infoTabelView.dataSource = self
+        infoTabelView.delegate = self
+        infoTabelView.register(InfoViewCell.self, forCellReuseIdentifier: InfoViewCell.identifire)
+        infoTabelView.register(InfoViewHeader.self, forHeaderFooterViewReuseIdentifier: InfoViewHeader.identifire)
+        useConctraint()
+    }
+    // MARK: - Публичные методы
     @objc func updateInfo() {
         infoTabelView.reloadData()
         infoTabelView.refreshControl?.endRefreshing()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "Информация"
-        view.addSubview(infoTabelView)
 
-        infoTabelView.dataSource = self
-        infoTabelView.delegate = self
-        
-        infoTabelView.register(InfoViewCell.self, forCellReuseIdentifier: InfoViewCell.identifire)
-        infoTabelView.register(InfoViewHeader.self, forHeaderFooterViewReuseIdentifier: InfoViewHeader.identifire)
-        
-        useConctraint()
-    }
-    
     func useConctraint(){
         NSLayoutConstraint.activate([
             infoTabelView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -50,6 +47,7 @@ class InfoVC: UIViewController {
     }
 }
 
+// MARK: - Расширения
 extension InfoVC:UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,7 +67,7 @@ extension InfoVC:UITableViewDelegate, UITableViewDataSource{
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: InfoViewHeader.identifire) as? InfoViewHeader else { return nil }
         return headerView
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }

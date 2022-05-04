@@ -8,10 +8,12 @@
 import UIKit
 
 class InfoViewHeader: UITableViewHeaderFooterView {
-    
+
+    // MARK: - Публичные ствойства
     static let identifire = "infoViewHeader"
-    
-    lazy var label: UILabel = {
+
+    // MARK: - Приватные свойства
+    private lazy var label: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.text = "Привычка за 21 день"
@@ -20,17 +22,19 @@ class InfoViewHeader: UITableViewHeaderFooterView {
         label.textAlignment = .left
         return label
     }()
-    
-    override init(reuseIdentifier: String?) {
+
+    // MARK: - Инциализаторы
+    override init(reuseIdentifier: String?){
         super.init(reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
         useConstraint()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder: NSCoder){
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    // MARK: - Публичные методы
     func useConstraint(){
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),

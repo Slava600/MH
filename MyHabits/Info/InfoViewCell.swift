@@ -8,10 +8,11 @@
 import UIKit
 
 class InfoViewCell: UITableViewCell {
-    
+    // MARK: - Публичные свойства
     static let identifire = "InfoViewCell"
-    
-    lazy var label: UILabel = {
+
+    // MARK: - Приватные свойства
+    private lazy var label: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
@@ -21,10 +22,11 @@ class InfoViewCell: UITableViewCell {
         label.text = textInfo
         return label
     }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+
+    // MARK: - Инфициализаторы
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
+        
         contentView.addSubview(label)
         useConctraint()
     }
@@ -32,8 +34,9 @@ class InfoViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func useConctraint(){
+
+    // MARK: - Приватные методы
+    private func useConctraint(){
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),

@@ -8,10 +8,13 @@
 import UIKit
 
 class HabitCollectionViewHeader: UICollectionViewCell {
-    
+
+// MARK: - Публичные свосйства
     static let identifire = "HabitCollectionViewHeader"
-    
-    lazy var label: UILabel = {
+
+
+// MARK: - Приватные свойства
+    lazy private var label: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.text = "Сегодня"
@@ -20,21 +23,26 @@ class HabitCollectionViewHeader: UICollectionViewCell {
         return label
     }()
 
+// MARK: - Инициализаторы
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         addSubview(label)
         useConstraint()
     }
-    
-    func useConstraint(){
-        NSLayoutConstraint.activate([label.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-                                     label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-                                     label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
-        ])
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+// MARK: - Приватные методы
+    private func useConstraint(){
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
+        ]
+        )
+    }
+    
+
 }

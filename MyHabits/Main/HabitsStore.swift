@@ -57,7 +57,7 @@ public final class Habit: Codable {
     
     private lazy var calendar: Calendar = .current
     
-    public init(name: String, date: Date, trackDates: [Date] = [], color: UIColor) {
+    public init(name: String, date: Date, trackDates: [Date] = [], color: UIColor){
         self.name = name
         self.date = date
         self.trackDates = trackDates
@@ -74,7 +74,7 @@ public final class Habit: Codable {
 }
 
 extension Habit: Equatable {
-
+    
     public static func == (lhs: Habit, rhs: Habit) -> Bool {
         lhs.name == rhs.name &&
         lhs.date == rhs.date &&
@@ -90,7 +90,7 @@ extension Habit: Equatable {
 public final class HabitsStore {
     
     /// Синглтон для изменения состояния привычек из разных модулей.
-    public static let shared: HabitsStore = .init()               // .......................?
+    public static let shared: HabitsStore = .init()              // .......................?
     
     /// Список привычек, добавленных пользователем. Добавленные привычки сохраняются в UserDefaults и доступны после перезагрузки приложения.
     public var habits: [Habit] = [] {
@@ -136,7 +136,7 @@ public final class HabitsStore {
     // MARK: - Lifecycle
     
     /// Сохраняет все изменения в привычках в UserDefaults.
-    public func save() {
+    public func save(){
         do {
             let data = try encoder.encode(habits)
             userDefaults.setValue(data, forKey: "habits")
@@ -173,7 +173,7 @@ public final class HabitsStore {
         }
     }
     
-    // MARK: - Private
+// MARK: - Private
     
     private init() {
         if userDefaults.value(forKey: "start_date") == nil {
@@ -197,7 +197,7 @@ private extension Date {
     static func dates(from fromDate: Date, to toDate: Date) -> [Date] {
         var dates: [Date] = []
         var date = fromDate
-
+        
         while date <= toDate {
             dates.append(date)
             guard let newDate = Calendar.current.date(byAdding: .day, value: 1, to: date) else {
@@ -237,6 +237,8 @@ let textInfo = """
 
 """
 struct СonstantValues {
-static var purpurColor = UIColor(red: 161/255, green: 22/255, blue: 204/255, alpha: 1)
-static var foneColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+    static var purpurColor = UIColor(red: 161/255, green: 22/255, blue: 204/255, alpha: 1)
+    static var foneColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
 }
+
+

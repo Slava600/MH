@@ -8,9 +8,12 @@
 import UIKit
 
 class ProgressCollectionViewCell: UICollectionViewCell {
+
+// MARK: - Свойства
     static let identifire = "ProgressCollectionViewCell"
-    
-    lazy var motivationLabel: UILabel = {
+
+// MARK: - Приватные свойства
+    lazy private var motivationLabel: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.text = "Все получится!"
@@ -21,7 +24,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var procentLabel: UILabel = {
+    lazy private var procentLabel: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
@@ -31,7 +34,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var progressBar: UIProgressView = {
+    lazy private var progressBar: UIProgressView = {
         let bar = UIProgressView(progressViewStyle: .bar)
         bar.toAutoLayout()
         bar.trackTintColor = .systemGray2
@@ -41,7 +44,8 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         bar.clipsToBounds = true
         return bar
     }()
-    
+
+// MARK: - Инициализаторы
     override init(frame: CGRect) {
         super.init(frame: .zero)
         contentView.backgroundColor = .white
@@ -52,14 +56,16 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+// MARK: - Публичные методы
     func setup() {
         progressBar.progress = HabitsStore.shared.todayProgress
         procentLabel.text = String(Int(HabitsStore.shared.todayProgress*100)) + "%"
         useConstraint()
     }
-    
-    func useConstraint() {
+
+// MARK: - Приватные методы
+    private func useConstraint() {
         NSLayoutConstraint.activate([
             motivationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             motivationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
@@ -73,6 +79,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
             progressBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             progressBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
             progressBar.heightAnchor.constraint(equalToConstant: 4)
-        ])
+        ]
+        )
     }
 }

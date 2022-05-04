@@ -8,7 +8,7 @@
 import UIKit
 
 class HabitDetailsTableHeader: UITableViewHeaderFooterView {
-    
+    // MARK: - Свойства
     static let identifire = "HabitDetailsTableHeader"
     
     lazy var label: UILabel = {
@@ -19,7 +19,8 @@ class HabitDetailsTableHeader: UITableViewHeaderFooterView {
         label.text = "Активность"
         return label
     }()
-    
+
+    // MARK: - Инициализаторы
     override init(reuseIdentifier: String?){
         super.init(reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
@@ -29,8 +30,9 @@ class HabitDetailsTableHeader: UITableViewHeaderFooterView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func useConstraint(){
+
+    // MARK: - Приватные методы
+    private func useConstraint(){
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15)

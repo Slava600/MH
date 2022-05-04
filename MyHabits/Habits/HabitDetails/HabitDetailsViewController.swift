@@ -8,24 +8,22 @@
 import UIKit
 
 class HabitDetailsVC: UIViewController {
-    
-    static let tableView: UITableView = {
+
+// MARK: - Приватные свойства
+    private let habit: Habit
+    private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.toAutoLayout()
         table.isScrollEnabled = true
         table.separatorInset = .zero
         table.rowHeight = UITableView.automaticDimension
         table.refreshControl = UIRefreshControl()
-        table.refreshControl?.addTarget(HabitDetailsVC.self, action: #selector(updateTable), for: .valueChanged)
+        table.refreshControl?.addTarget(self, action: #selector(updateTable), for: .valueChanged)
         return table
     }()
 
-    let habit: Habit
-    
-    static var isDeleted = false
-    
-    init (_ habit: Habit) {
-        HabitDetailsVC.isDeleted = false
+// MARK: - Инициализаторы
+    init(_ habit: Habit) {
         self.habit = habit
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,12 +31,44 @@ class HabitDetailsVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func updateTable(){
-        HabitDetailsVC.tableView.reloadData()
-        HabitDetailsVC.tableView.refreshControl?.endRefreshing()
+
+// MARK: - Методы жизненного цикла
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let leftBarButtonItem = UIBarButtonItem(title: "❮  Назад", style: .plain, target: self, action: #selector(tapToCancel))
+        leftBarButtonItem.tintColor = СonstantValues.purpurColor
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        
+        let rightBarButtonItem = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(editHabit))
+        rightBarButtonItem.tintColor = СonstantValues.purpurColor
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        view.backgroundColor = .white
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.register(HabitDetailsTableHeader.self, forHeaderFooterViewReuseIdentifier: HabitDetailsTableHeader.identifire)
+        tableView.register(HabitDetailTableViewCell.self, forCellReuseIdentifier: HabitDetailTableViewCell.identifire)
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ]
+        )
     }
-    
+
+// MARK: - Публичные методы
+    @objc func updateTable(){
+        tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
+    }
+
     @objc func tapToCancel() {
         navigationController?.popViewController(animated: true)
     }
@@ -46,37 +76,9 @@ class HabitDetailsVC: UIViewController {
     @objc func editHabit(){
         navigationController?.present(HabitVC(habit), animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let leftBarButtonItem = UIBarButtonItem(title: "❮  Назад", style: .plain, target: self, action: #selector(tapToCancel))
-        leftBarButtonItem.tintColor = СonstantValues.purpurColor
-        navigationItem.leftBarButtonItem = leftBarButtonItem
-
-        let rightBarButtonItem = UIBarButtonItem (title: "Править", style: .plain, target: self, action: #selector (editHabit))
-        rightBarButtonItem.tintColor = СonstantValues.purpurColor
-        navigationItem.rightBarButtonItem = rightBarButtonItem
-        
-        view.backgroundColor = .white
-        
-        HabitDetailsVC.tableView.dataSource = self
-        HabitDetailsVC.tableView.delegate = self
-        
-        HabitDetailsVC.tableView.register(HabitDetailsTableHeader.self, forHeaderFooterViewReuseIdentifier: HabitDetailsTableHeader.identifire)
-        HabitDetailsVC.tableView.register(HabitDetailTableViewCell.self, forCellReuseIdentifier: HabitDetailTableViewCell.identifire)
-
-        view.addSubview(HabitDetailsVC.tableView)
-        
-        NSLayoutConstraint.activate([
-            HabitDetailsVC.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            HabitDetailsVC.tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            HabitDetailsVC.tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            HabitDetailsVC.tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
-    }
 }
 
+// MARK: - Расширения
 extension HabitDetailsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,12 +86,12 @@ extension HabitDetailsVC: UITableViewDataSource, UITableViewDelegate {
         
         let date = HabitsStore.shared.dates[indexPath.row]
         cell.setup(date: date, check: HabitsStore.shared.habit(habit, isTrackedIn: date))
-       
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    HabitsStore.shared.dates.count
+        HabitsStore.shared.dates.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -105,4 +107,4 @@ extension HabitDetailsVC: UITableViewDataSource, UITableViewDelegate {
         return 45
     }
 }
-    
+

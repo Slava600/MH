@@ -8,9 +8,13 @@
 import UIKit
 
 class HabitCollectionViewCell: UICollectionViewCell {
+
+// MARK: - Публичные свойства
     static let identifire = "HabitCollectionViewCell"
-    
-    lazy var nameLabel: UILabel = {
+    var habit: Habit?
+
+// MARK: - Приватные свойства
+    lazy private var nameLabel: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
@@ -18,7 +22,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var dataText: UILabel = {
+    lazy private var dataText: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
@@ -27,7 +31,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var counterText: UILabel = {
+    lazy private var counterText: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
@@ -36,7 +40,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var checker: UIButton = {
+    lazy private var checker: UIButton = {
         let checkButton = UIButton()
         checkButton.toAutoLayout()
         checkButton.layer.cornerRadius = 19
@@ -45,13 +49,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return checkButton
     }()
 
-    @objc func tapToChecker() {
-        if let trackHabit = habit {
-            HabitsStore.shared.track(trackHabit)
-            HabitsVC.collectionView.reloadData()
-        }
-    }
-    
+// MARK: - Инициализаторы
     override init(frame: CGRect) {
         super.init(frame: .zero)
         contentView.backgroundColor = .white
@@ -62,9 +60,15 @@ class HabitCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var habit: Habit?
-    
+
+// MARK: - Публичные методы
+    @objc func tapToChecker() {
+        if let trackHabit = habit {
+            HabitsStore.shared.track(trackHabit)
+            HabitsVC.collectionView.reloadData()
+        }
+    }
+
     func setup(habit: Habit) {
         self.habit = habit
         nameLabel.text = habit.name
@@ -88,24 +92,26 @@ class HabitCollectionViewCell: UICollectionViewCell {
         }
         useConstraint()
     }
-    
-    func useConstraint(){
+
+// MARK: - Приватные методы
+    private func useConstraint(){
         NSLayoutConstraint.activate([
-         nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 21),
-         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-         
-         dataText.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-         dataText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-         
-         checker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-         checker.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 40),
-         checker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
-         checker.widthAnchor.constraint(equalToConstant: 38),
-         checker.heightAnchor.constraint(equalToConstant: 38),
-         
-         counterText.topAnchor.constraint(equalTo: checker.bottomAnchor, constant: 15),
-         counterText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-         counterText.trailingAnchor.constraint(equalTo: checker.leadingAnchor, constant: -40)
-        ])
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 21),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            
+            dataText.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            dataText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            
+            checker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            checker.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 40),
+            checker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
+            checker.widthAnchor.constraint(equalToConstant: 38),
+            checker.heightAnchor.constraint(equalToConstant: 38),
+            
+            counterText.topAnchor.constraint(equalTo: checker.bottomAnchor, constant: 15),
+            counterText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            counterText.trailingAnchor.constraint(equalTo: checker.leadingAnchor, constant: -40)
+        ]
+        )
     }
 }

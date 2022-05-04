@@ -18,16 +18,12 @@
 		11A17C1E27F7494F00099E20 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */; };
 		11A17C2227F7499E00099E20 /* HabitCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */; };
 		11AE6A8927FB7A5500F328C7 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE6A8827FB7A5500F328C7 /* HabitDetailsViewController.swift */; };
-		11E5997B27ED2DC10091269C /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */; };
 		11E5997D27EDE7220091269C /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5997C27EDE7220091269C /* HabitsStore.swift */; };
 		11E5998327EE00780091269C /* HabitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998227EE00780091269C /* HabitsVC.swift */; };
 		11E5998527EE008C0091269C /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998427EE008C0091269C /* InfoVC.swift */; };
 		11E5998727EE2C780091269C /* HabitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998627EE2C780091269C /* HabitVC.swift */; };
 		11E5999027EF7EB40091269C /* InfoViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5998F27EF7EB40091269C /* InfoViewHeader.swift */; };
 		11E5999627EF87B10091269C /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E5999527EF87B10091269C /* InfoViewCell.swift */; };
-		11E5999827EF89090091269C /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11E5999727EF89090091269C /* SF-Pro-Text-Regular.otf */; };
-		11E5999A27EF89210091269C /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11E5999927EF89210091269C /* SF-Pro-Text-Semibold.otf */; };
-		11E5999C27EF898F0091269C /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11E5999B27EF898F0091269C /* SF-Pro-Display-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,16 +40,12 @@
 		11A17C1D27F7494F00099E20 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
 		11A17C2127F7499E00099E20 /* HabitCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewHeader.swift; sourceTree = "<group>"; };
 		11AE6A8827FB7A5500F328C7 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
-		11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		11E5997C27EDE7220091269C /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		11E5998227EE00780091269C /* HabitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsVC.swift; sourceTree = "<group>"; };
 		11E5998427EE008C0091269C /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		11E5998627EE2C780091269C /* HabitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitVC.swift; sourceTree = "<group>"; };
 		11E5998F27EF7EB40091269C /* InfoViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewHeader.swift; sourceTree = "<group>"; };
 		11E5999527EF87B10091269C /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
-		11E5999727EF89090091269C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		11E5999927EF89210091269C /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Semibold.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		11E5999B27EF898F0091269C /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +84,6 @@
 				118D2CBB27EC3D870096E1E2 /* Assets.xcassets */,
 				118D2CBD27EC3D870096E1E2 /* LaunchScreen.storyboard */,
 				118D2CC027EC3D870096E1E2 /* Info.plist */,
-				11E5997A27ED2DC10091269C /* SF-Pro-Display-Semibold.otf */,
-				11E5999727EF89090091269C /* SF-Pro-Text-Regular.otf */,
-				11E5999927EF89210091269C /* SF-Pro-Text-Semibold.otf */,
-				11E5999B27EF898F0091269C /* SF-Pro-Display-Bold.otf */,
 				118D2CB227EC3D850096E1E2 /* AppDelegate.swift */,
 				118D2CB627EC3D850096E1E2 /* ViewController.swift */,
 			);
@@ -202,11 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11E5997B27ED2DC10091269C /* SF-Pro-Display-Semibold.otf in Resources */,
 				118D2CBF27EC3D870096E1E2 /* LaunchScreen.storyboard in Resources */,
-				11E5999C27EF898F0091269C /* SF-Pro-Display-Bold.otf in Resources */,
-				11E5999A27EF89210091269C /* SF-Pro-Text-Semibold.otf in Resources */,
-				11E5999827EF89090091269C /* SF-Pro-Text-Regular.otf in Resources */,
 				118D2CBC27EC3D870096E1E2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,10 +351,10 @@
 		118D2CC427EC3D870096E1E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J2C8L6ZTF8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyHabits;
@@ -384,7 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = netology.MyHabits;
+				PRODUCT_BUNDLE_IDENTIFIER = ARKHIPOV.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -395,10 +379,10 @@
 		118D2CC527EC3D870096E1E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J2C8L6ZTF8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyHabits;
@@ -412,7 +396,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = netology.MyHabits;
+				PRODUCT_BUNDLE_IDENTIFIER = ARKHIPOV.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
