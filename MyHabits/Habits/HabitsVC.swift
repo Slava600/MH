@@ -10,18 +10,18 @@ import UIKit
 class HabitsVC: UIViewController {
 
 // MARK: - Публичные свосйства
-    static let layout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 21
-        layout.sectionInsetReference = .fromContentInset
-        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        return layout
-    }()
+//    static let layout: UICollectionViewFlowLayout = {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical
+//        layout.minimumLineSpacing = 21
+//        layout.sectionInsetReference = .fromContentInset
+//        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
+//        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+//        return layout
+//    }()
     
-    static let collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: HabitsVC.layout)
+    private let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
         collectionView.toAutoLayout()
         collectionView.backgroundColor = СonstantValues.foneColor
         return collectionView
@@ -40,29 +40,33 @@ class HabitsVC: UIViewController {
             action: #selector(addHabit))
         navigationItem.rightBarButtonItem = barButtonItem
         
-        HabitsVC.collectionView.dataSource = self
-        HabitsVC.collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        view.addSubviews(HabitsVC.collectionView)
+        view.addSubviews(collectionView)
         
-        HabitsVC.collectionView.register(ProgressCollectionViewCell.self, forCellWithReuseIdentifier: ProgressCollectionViewCell.identifire)
-        HabitsVC.collectionView.register(HabitCollectionViewCell.self, forCellWithReuseIdentifier: HabitCollectionViewCell.identifire)
-        HabitsVC.collectionView.register(HabitCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HabitCollectionViewHeader.identifire)
-        
+        collectionView.register(ProgressCollectionViewCell.self, forCellWithReuseIdentifier: ProgressCollectionViewCell.identifire)
+        collectionView.register(HabitCollectionViewCell.self, forCellWithReuseIdentifier: HabitCollectionViewCell.identifire)
+        collectionView.register(HabitCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HabitCollectionViewHeader.identifire)
+        NotificationCenter.default.addObserver(self, selector: #selector (reloadTable), name: NSNotification.Name(rawValue: "reloadTable"), object: nil)
+
         useConstraint()
     }
 
 // MARK: - Публичные методы
+    @objc func reloadTable(){
+        collectionView.reloadData()    }
+
     @objc func addHabit() {
         navigationController?.present(HabitVC(nil), animated: true, completion: nil)
     }
     
     func useConstraint(){
         NSLayoutConstraint.activate([
-            HabitsVC.collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            HabitsVC.collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            HabitsVC.collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            HabitsVC.collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

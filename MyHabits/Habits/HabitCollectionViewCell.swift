@@ -65,7 +65,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     @objc func tapToChecker() {
         if let trackHabit = habit {
             HabitsStore.shared.track(trackHabit)
-            HabitsVC.collectionView.reloadData()
+            NotificationCenter.default.post(name: Notification.Name("reloadTable"), object: nil)
         }
     }
 
