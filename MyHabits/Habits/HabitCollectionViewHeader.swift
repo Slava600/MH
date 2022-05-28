@@ -9,7 +9,7 @@ import UIKit
 
 class HabitCollectionViewHeader: UICollectionViewCell {
 
-// MARK: - Публичные свосйства
+// MARK: - Публичные свойства
     static let identifire = "HabitCollectionViewHeader"
 
 

@@ -18,7 +18,7 @@ class HabitDetailsVC: UIViewController {
         table.separatorInset = .zero
         table.rowHeight = UITableView.automaticDimension
         table.refreshControl = UIRefreshControl()
-        table.refreshControl?.addTarget(self, action: #selector(updateTable), for: .valueChanged)
+        table.refreshControl?.addTarget(HabitDetailsVC.self, action: #selector(updateTable), for: .valueChanged)
         return table
     }()
 

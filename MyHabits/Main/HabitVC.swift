@@ -209,13 +209,15 @@ class HabitVC: UIViewController {
         habitTime = sender.date
     }
 
+   private let habitsVC: HabitsVC
+
     @objc func deleteHabit() {
         let alertController = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \"\(habitName)\"?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) {(action) -> Void in
             if let selfHabit = self.habit {
                 HabitsStore.shared.habits.removeAll(where: {$0 == selfHabit})
-                HabitsVC.collectionView.reloadData()
+                NotificationCenter.default.post(name: Notification.Name("reloadTable"), object: nil)
             }
             self.dismiss(animated: true, completion: nil)
         }
@@ -230,7 +232,7 @@ class HabitVC: UIViewController {
             selfHabit.date = habitTime
             selfHabit.color = habitColor
             HabitsStore.shared.save()
-            HabitsVC.collectionView.reloadData()
+            habitsVC.collectionView.reloadData()
         } else {
             let newHabit = Habit(name: habitName,
                                  date: habitTime,
@@ -238,7 +240,7 @@ class HabitVC: UIViewController {
             let store = HabitsStore.shared
             if !store.habits.contains(newHabit){
                 store.habits.append(newHabit)
-                HabitsVC.collectionView.reloadData()
+                habitsVC.collectionView.reloadData()
             }
         }
         dismiss(animated: true, completion: nil)
